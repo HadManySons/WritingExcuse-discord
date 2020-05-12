@@ -66,6 +66,7 @@ async def on_message(message):
         sys.exit(1)
 
     if "writingexcuse!" in message.content.lower():
+        print("penis")
         globalCount += 1
         print("\nMessages processed since start of bot: " + str(globalCount))
         print(f"Processing message: {message.content} from: {message.author}")
