@@ -49,7 +49,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if "writingexcuse shutdown!" in message.content.lower():
+    if "writingexcuse shutdown!" in message.content.lower() and any(matches in str(message.author) for matches in admins):
         print("Shutting down due to @client on_message")
         await message.channel.send("WritingExcuse bot shutting down due to request by " + f"{message.author}")
         logging.info(time.strftime("%Y/%m/%d %H:%M:%S ") +
@@ -57,7 +57,7 @@ async def on_message(message):
         restart = False
         sys.exit(2)
 
-    if "writingexcuse restart!" in message.content.lower():
+    if "writingexcuse restart!" in message.content.lower() and any(matches in str(message.author) for matches in admins):
         print("Restarting due to @client on_message")
         await message.channel.send("WritingExcuse bot restarting due to request by " + f"{message.author}")
         logging.info(time.strftime("%Y/%m/%d %H:%M:%S ") +
