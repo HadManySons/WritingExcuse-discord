@@ -1,3 +1,4 @@
 # WritingExcuse-discord
 Writing excuse generator bot for discord servers
-Pretty much is
+
+Pretty much it
